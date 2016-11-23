@@ -8,12 +8,12 @@ protected:
 	double m_y;
 
 public:
-
+	
 	CMammal(const double aInitialX, const double aInitialY);
 
-	virtual ~CMammal();
 
 	virtual void OnTime(double const dt);
 
+	virtual ~CMammal();
 };
 

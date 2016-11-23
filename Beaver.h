@@ -1,13 +1,12 @@
 #pragma once
 #include "Mammal.h"
-class CMouse :
+class CBeaver :
 	public CMammal
 {
 public:
-	CMouse();
-	CMouse(double const x, double const y);
-	~CMouse();
-
+	CBeaver();
+	CBeaver(double const x, double const y);
+	~CBeaver();
 	void OnTime(double const dt)override;
 };
 

@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "Mouse.h"
 
-#define COUT std::cout << 
-#define ENDL << std::endl
-
 CMouse::CMouse() :CMammal()
 {
 	COUT "i'm Mouse" ENDL;
@@ -12,10 +9,15 @@ CMouse::CMouse() :CMammal()
 CMouse::CMouse(double const x, double const y) 
 : CMammal(x, y)
 {
-	COUT "hello, i'm Mouse" ENDL;
+	COUT "Mouse  in " << "x = " << x << " : y = " << y ENDL;
 }
 
 CMouse::~CMouse()
 {
-	COUT "Mouse DEAD" ENDL;
+	COUT "Mouse  DEAD " ENDL;
+}
+
+void CMouse::OnTime(double const dt)
+{
+	COUT "Mouse  running " << dt ENDL;
 }

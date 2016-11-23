@@ -6,10 +6,14 @@
 #pragma once
 
 #include "targetver.h"
-
 #include <stdio.h>
 #include <tchar.h>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+#define COUT std::cout << 
+#define ENDL << std::endl
 
 
 // TODO: reference additional headers your program requires here
