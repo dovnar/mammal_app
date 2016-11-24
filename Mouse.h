@@ -5,6 +5,8 @@ class CMouse :
 {
 public:
 	CMouse();
+	//конструктор копирования
+	//CMouse(const CMouse& aSourse);
 	CMouse(double const x, double const y);
 	~CMouse();
 

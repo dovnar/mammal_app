@@ -10,7 +10,8 @@ protected:
 public:
 	
 	CMammal(const double aInitialX, const double aInitialY);
-
+	//конструктор копирования
+	//CMammal(const CMammal& aSourse);
 
 	virtual void OnTime(double const dt);
 

@@ -5,11 +5,14 @@
 #include "Mammal.h"
 #include "Mouse.h"
 #include "Beaver.h"
-#include "MySteckInt.h"
+#include "MySteck.h"
 int _tmain(int argc, _TCHAR* argv[])
 {
 
 	{
+		CBeaver v;
+		CBeaver z(v);
+		z = v;
 		const int countMammal = _ttoi(argv[1]);
 		srand(time(NULL));
 		CMammal** vM = new CMammal*[countMammal];
@@ -36,6 +39,10 @@ int _tmain(int argc, _TCHAR* argv[])
 			vM[i]->OnTime(0.1);
 		}
 		system("pause");
+		for (int i = 0; i < countMammal; i++)
+		{
+			delete[] vM[i];
+		}
 		delete[] vM;
 	}
 
