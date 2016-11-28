@@ -4,19 +4,25 @@
 CMySteck::CMySteck()
 {
 	arr = new int[1];
+	arr = { nullptr };
 	idSteck = 0;
 }
 
+void CMySteck::ReallocateMemory()
+{
+	count_elenent += 16;
+	auto vData = new int[count_elenent];
+	memcpy(vData, arr, idSteck * sizeof(arr));
+	std::swap(vData, arr);
+	delete[] vData;
+}
 void CMySteck::Push(int push)
 {
-	idSteck++;
-	int* arr2 = new int[idSteck];
-	memcpy(arr2, arr, sizeof(int)*idSteck);
-	delete[] arr;
-	arr = new int[idSteck];
-	memcpy(arr, arr2, sizeof(int)*idSteck);
-	arr[idSteck - 1] = push;
-	delete[] arr2;
+	if (arr == nullptr || count_elenent >= idSteck)
+	{
+		ReallocateMemory();
+	}
+	arr[idSteck] = push;
 }
 
 CMySteck::~CMySteck()
@@ -25,14 +31,14 @@ CMySteck::~CMySteck()
 
 bool CMySteck::pull(int& pull)
 {
-	idSteck--;
-	if (idSteck < NULL)
+	
+	if (idSteck <= 0)
 	{
 		return false;
 	}
 	else
 	{
-		pull = arr[idSteck];
+		pull = arr[--idSteck];
 		return true;
 	}
 }
