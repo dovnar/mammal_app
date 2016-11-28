@@ -10,9 +10,14 @@ public:
 	CBeaver();
 	//конструктор копирования
 	CBeaver(const CBeaver& aSourse);
+
 	CBeaver(CMouse& wayMouse);
 	CBeaver(double const x, double const y);
 	~CBeaver();
 	void OnTime(double const dt)override;
+	CBeaver& operator = (const CBeaver& aSource);
+	CBeaver& operator + (const CBeaver& aSource);
+	CBeaver& operator += (const CBeaver& aSource);
+	 
 };
 

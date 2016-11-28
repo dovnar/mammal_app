@@ -44,3 +44,16 @@ void CBeaver::OnTime(double const dt)
 {
 	COUT "Beaver running " << dt + 1.1 ENDL;
 }
+
+CBeaver& CBeaver::operator = (const CBeaver& aSource)
+{
+
+}
+CBeaver& CBeaver::operator + (const CBeaver& aSource)
+{
+
+}
+CBeaver& CBeaver::operator += (const CBeaver& aSource)
+{
+
+}

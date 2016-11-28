@@ -8,8 +8,9 @@
 #include "MySteck.h"
 int _tmain(int argc, _TCHAR* argv[])
 {
-
+	system("mode con cols=80 line=40");
 	{
+		
 		CBeaver v;
 		CBeaver z(v);
 		z = v;
